@@ -12,8 +12,8 @@ import java.util.UUID;
 @Repository
 
 public class UserRepository {
-    private final List<User> userData;
 
+    private final List<User> userData;
 
     public UserRepository(){
         User user1 = new User(UUID.randomUUID(),"admin", "admin01","Administrator");
@@ -32,21 +32,5 @@ public class UserRepository {
     public List<User> select(){
         return userData;
     }
-
-    // add new User
-    public User addUser(User user){
-
-        User newUser = new User(
-                UUID.randomUUID(),
-                user.name(),
-                user.password(),
-                user.fullName()
-        );
-        // add new user to list
-        userData.add(newUser);
-
-        return newUser;
-    }
-
 
 }
